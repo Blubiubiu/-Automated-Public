@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/**
 /dist
+/data
+/drone
+/gogs
 
 # local env files
 .env.local
