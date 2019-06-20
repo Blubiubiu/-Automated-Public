@@ -77,7 +77,7 @@ services:
       - DRONE_GITHUB_URL=https://github.com/Blubiubiu/Automated-Public
       - DRONE_GITHUB_CLIENT=a0afc8291c2077baec8e
       - DRONE_GITHUB_SECRET=90ec2278e3b40693afcfff5f6ff613b1c04d49b8
-      - DRONE_SECRET=XsJnj4DmzuXBKkcgHeUAJQxq
+      - DRONE_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
 
   drone-agent:
     image: drone/agent
@@ -88,7 +88,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_SERVER=39.107.96.198:9000
-      - DRONE_SECRET=XsJnj4DmzuXBKkcgHeUAJQxq
+      - DRONE_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
 
 volumes:
   data:
