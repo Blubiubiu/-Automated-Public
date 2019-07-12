@@ -6,17 +6,17 @@ pipeline:
       - 'echo hello'
     when:
       branch: master
-  public-online:
-    #image: harbor.office.tengyue360.com/tools/drone-docker
-    volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-    commands:
-      - 'docker login -u 13474553441 registry.cn-beijing.aliyuncs.com'
-      # - 'docker build --rm -t support-background-manage-system .'
-      # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
-      - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
-      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
-    when:
-      branch: master
+  # public-online:
+  #   #image: harbor.office.tengyue360.com/tools/drone-docker
+  #   volumes:
+  #     - '/var/run/docker.sock:/var/run/docker.sock'
+  #   commands:
+  #     - 'docker login -u 13474553441 registry.cn-beijing.aliyuncs.com'
+  #     # - 'docker build --rm -t support-background-manage-system .'
+  #     # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
+  #     - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
+  #     - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
+  #   when:
+  #     branch: master
 
   
