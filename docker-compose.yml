@@ -1,94 +1,30 @@
-# version: '3'
-# services:
-#   drone-server:
-#     image: drone/drone
-#     ports:
-#       - "80:80"
-#     volumes:
-#       - ./drone:/var/lib/drone/
-#     environment:
-#       - DRONE_OPEN=true
-#       - DRONE_SERVER_HOST=drone-server
-#       - DRONE_DEBUG=true
-#       - DRONE_GIT_ALWAYS_AUTH=false
-#       - DRONE_GOGS=true
-#       - DRONE_GOGS_SKIP_VERIFY=false
-#       - DRONE_GOGS_SERVER=http://gogs:3000
-#       - DRONE_PROVIDER=gogs
-#       - DRONE_DATABASE_DATASOURCE=/var/lib/drone/drone.sqlite
-#       - DRONE_DATABASE_DRIVER=sqlite3
-#       - DRONE_SERVER_PROTO=http
-#       - DRONE_RPC_SECRET=123456
-#   gogs:
-#     image: gogs/gogs
-#     ports:
-#       - "10022:22"
-#       - "3000:3000"
-#     volumes:
-#       - ./data/gogs:/data
-#     depends_on:
-#       - mysql
-#   mysql:
-#     image: mysql:5.7.19
-#     volumes:
-#       - ./gogs/mysql:/var/lib/mysql
-#     ports:
-#       - 3308:3306
-#     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-#     environment:
-#       MYSQL_ROOT_PASSWORD: 123456
-#       MYSQL_DATABASE: gogs
-#       MYSQL_USER: gogs
-#       MYSQL_PASSWORD: 123456
-#   drone-agent:
-#     image: drone/agent
-#     depends_on:
-#       - drone-server
-#     environment:
-#       - DRONE_RPC_SERVER=http://drone-server
-#       - DRONE_RPC_SECRET=123456
-#       - DRONE_DEBUG=true
-#       - DOCKER_HOST=tcp://docker-bind:2375
-#   docker-bind:
-#      image: docker:dind
-#      privileged: true
-#      command: --storage-driver=overlay
-
-
 version: '3'
-
 services:
   drone-server:
     image: drone/drone
-    container_name: drone-server
-
     ports:
-      - 8000:8000
-      - 9000:9000
-    volumes:
-      - data:/var/lib/drone/
-    restart: always
+      - "8082:80"
     environment:
       - DRONE_OPEN=true
-      - DRONE_ADMIN=blubiubiu
-      - DRONE_HOST=https://39.107.96.198
+      - DRONE_SERVER_HOST=https://39.107.96.198
+      - DRONE_DEBUG=true
       - DRONE_GITHUB=true
       - DRONE_GITHUB_PRIVATE_MODE=true
       - DRONE_GITHUB_URL=https://github.com/Blubiubiu/Automated-Public
       - DRONE_GITHUB_CLIENT=a0afc8291c2077baec8e
       - DRONE_GITHUB_SECRET=90ec2278e3b40693afcfff5f6ff613b1c04d49b8
       - DRONE_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
-
+      - DRONE_SERVER_PROTO=http
+      - DRONE_RPC_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
   drone-agent:
     image: drone/agent
-    container_name: drone-agent
-    command: agent
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - drone-server
     environment:
-      - DRONE_SERVER=39.107.96.198:9000
-      - DRONE_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
-
-volumes:
-  data:
+      - DRONE_RPC_SERVER=http://drone-server
+      - DRONE_RPC_SECRET=c91b94a603e60e3ef42ef6c7ba4619d37cc552ce
+      - DRONE_DEBUG=true
+      - DOCKER_HOST=tcp://docker-bind:2375
+  docker-bind:
+     image: docker:dind
+     privileged: true
