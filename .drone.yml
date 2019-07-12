@@ -11,11 +11,11 @@ pipeline:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
     commands:
-      - 'docker login -u 13474553441 -p shengbingdemao77 registry.cn-beijing.aliyuncs.com'
+      - 'docker login --username=13474553441 registry.cn-beijing.aliyuncs.com'
       # - 'docker build --rm -t support-background-manage-system .'
       # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
-      - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
-      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
+      - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01:09'
+      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01:09'
     when:
       branch: master
 
