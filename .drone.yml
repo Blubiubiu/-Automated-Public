@@ -11,8 +11,8 @@ pipeline:
       branch: master
   public-online:    
     image: plugins/docker 
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - 'docker ps'
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
