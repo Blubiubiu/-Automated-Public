@@ -14,7 +14,9 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
+      - 'docker ps'
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
+      - 'docker ps'
       - 'ls'
       - 'docker build -t docker_test_01 .'
       # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
