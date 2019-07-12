@@ -8,8 +8,8 @@ pipeline:
       branch: master
   public-online:
     image: 'node:10.6.0'
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    # volumes:
+    #   - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - 'docker login --username=13474553441 registry.cn-beijing.aliyuncs.com'
       # - 'docker build --rm -t support-background-manage-system .'
