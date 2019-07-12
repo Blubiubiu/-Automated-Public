@@ -7,7 +7,7 @@ pipeline:
     when:
       branch: master
   public-online:
-    image: ""
+    image: "registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01"
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
     commands:
