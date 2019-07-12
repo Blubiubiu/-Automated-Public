@@ -8,6 +8,9 @@ pipeline:
       branch: master
   public-online:
     image: "plugins-docker"
+    secrets:
+      - docker_username
+      - docker_password
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
     commands:
