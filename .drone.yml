@@ -1,46 +1,11 @@
-workspace:
-  base: /drone/src
-  path: automated-public-demo
 pipeline:
-  restore-cache:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - node_modules
-    volumes:
-      - '/drone/src/automated-public-demo:/cache'
-
-  build-dev:
+  
+  build-master:
     image: 'node:10.6.0'
     privileged: true
     commands:
       - 'echo hello'
     when:
-      branch: blubiubiu
+      branch: master
 
-  public-dev:
-    image: docker
-    volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-    commands:
-      - 'docker login -u hesouli -p cptbtptp123 registry.cn-beijing.aliyuncs.com'
-      # - 'docker build --rm -t support-background-manage-system .'
-      # - 'docker tag automated-public-demo registry.cn-beijing.aliyuncs.com/automated-public-fe/automated-public-demo:dev'
-      - 'docker push registry.cn-beijing.aliyuncs.com/automated-public-fe/automated-public-demo:dev'
-    when:
-      branch: blubiubiu
-      event: push
-
-  # rancher-dev:
-  #   image: harbor.office.tengyue360.com/tools/drone-rancher
-  #   url: 'http://10.88.88.3:8080'
-  #   access_key: 9926FF6813E519301D16
-  #   secret_key: iRoJpMYNwqTha6yHHBnCGtkkEzG13z53r5JTzePM
-  #   service: shuangshi/support-background-manage-system
-  #   docker_image: 'harbor.office.tengyue360.com/ty-shuangshi/support-background-manage-system:dev'
-  #   start_first: false
-  #   confirm: true
-  #   timeout: 300
-  #   when:
-  #     branch: dev
-  #     event: push
+  
