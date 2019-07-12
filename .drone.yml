@@ -25,7 +25,7 @@ pipeline:
     commands:
       - 'docker login -u hesouli -p cptbtptp123 registry.cn-beijing.aliyuncs.com'
       # - 'docker build --rm -t support-background-manage-system .'
-      - 'docker tag automated-public-demo registry.cn-beijing.aliyuncs.com/automated-public-fe/automated-public-demo:dev'
+      # - 'docker tag automated-public-demo registry.cn-beijing.aliyuncs.com/automated-public-fe/automated-public-demo:dev'
       - 'docker push registry.cn-beijing.aliyuncs.com/automated-public-fe/automated-public-demo:dev'
     when:
       branch: blubiubiu
