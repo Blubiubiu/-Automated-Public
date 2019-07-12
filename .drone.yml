@@ -18,7 +18,5 @@ pipeline:
       - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
     when:
       branch: master
-      event: deployment
-      environment: production
 
   
