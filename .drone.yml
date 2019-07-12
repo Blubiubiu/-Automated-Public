@@ -14,7 +14,7 @@ pipeline:
     # volumes:
     #   - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - 'docker login --username=13474553441 --password-stdin shengbingdemao77 registry.cn-beijing.aliyuncs.com'
+      - 'docker login --username=13474553441 -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
       # - 'docker build --rm -t support-background-manage-system .'
       # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
       - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
