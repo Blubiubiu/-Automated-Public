@@ -14,7 +14,7 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - 'ls'
+      # - 'ls'
       # - 'docker ps'
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
       # - 'docker ps'
