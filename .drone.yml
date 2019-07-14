@@ -21,7 +21,7 @@ pipeline:
       
       - 'docker build  -t test-docker .'
       # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
-      - 'docker tag test-docker1 registry.cn-beijing.aliyuncs.com/panda-test/test-docker'
+      - 'docker tag test-docker registry.cn-beijing.aliyuncs.com/panda-test/test-docker'
       - 'docker push registry.cn-beijing.aliyuncs.com/panda-test/test-docker'
     when: 
       branch: master
