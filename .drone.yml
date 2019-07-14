@@ -11,8 +11,8 @@ pipeline:
       branch: master
   public-online:    
     image: plugins/docker 
-    # volumes:
-    #   - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - 'ls'
       # - 'docker ps'
