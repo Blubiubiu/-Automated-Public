@@ -19,10 +19,10 @@ pipeline:
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
       # - 'docker ps'
       
-      - 'docker build --rm -t docker_test_01 .'
+      - 'docker build  -t docker_test_02 .'
       # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
-      - 'docker tag docker_test_01 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
-      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_01'
+      - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
+      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     when: 
       branch: master
 
