@@ -24,5 +24,17 @@ pipeline:
       - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     when: 
       branch: master
+  rancher-online:
+    image: peloton/drone-rancher
+    url: 'https://rancher.11vx.cn'
+    access_key: admin
+    secret_key: admin
+    service: my-test-01/test-01
+    docker_image: 'registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
+    start_first: false
+    confirm: true
+    timeout: 300
+    when:
+      branch: master
 
   
