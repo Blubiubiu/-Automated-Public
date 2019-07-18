@@ -27,6 +27,7 @@ pipeline:
     secret_key: CyVAH7yQbqPCTGMiFxN5oQEZVf53tAAR1LDRn6Bn
     service: my-test-01/test-01
     docker_image: 'registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
+    start_first: false
     confirm: true
     timeout: 300
     when:
