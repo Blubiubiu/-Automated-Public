@@ -33,7 +33,7 @@ pipeline:
     docker_image: 'registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
     start_first: false
     confirm: true
-    timeout: 300
+    timeout: 300 
     when:
       branch: master 
 
