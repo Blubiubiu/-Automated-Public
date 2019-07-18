@@ -14,14 +14,14 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock 
     commands:
-      # - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
-      # - 'docker build --rm -t docker_test_02 .'
-      # - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
-      # - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
-      - 'docker build --rm -t one .'
-      - 'docker tag one registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
-      - 'docker push registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
+      - 'docker build --rm -t docker_test_02 .'
+      - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
+      - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
+      # - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
+      # - 'docker build --rm -t one .'
+      # - 'docker tag one registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
+      # - 'docker push registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
     when: 
       branch: master
   # rancher-online:
