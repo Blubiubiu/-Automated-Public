@@ -26,7 +26,7 @@ pipeline:
       branch: master 
   rancher-online:
     image: peloton/drone-rancher
-    url: 'https://rancher.11vx.cn:8070'
+    url: 'https://rancher.11vx.cn'
     access_key: 7C3B0D6FFBAAF845DD3D
     secret_key: CyVAH7yQbqPCTGMiFxN5oQEZVf53tAAR1LDRn6Bn
     service: my-test-01/test-01
