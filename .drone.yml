@@ -23,7 +23,7 @@ pipeline:
       - 'docker tag one registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
       - 'docker push registry.cn-beijing.aliyuncs.com/panda-docker-test/one'
     when: 
-      branch: master 
+      branch: master  
   rancher-online:
     image: peloton/drone-rancher
     url: 'https://rancher.11vx.cn'
