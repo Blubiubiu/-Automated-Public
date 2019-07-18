@@ -14,12 +14,8 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      # - 'docker ps'
       - 'docker login --username=hesouli -p Cptbtptp123 registry.cn-beijing.aliyuncs.com'
-      # - 'docker ps'
-      
       - 'docker build --rm -t docker_test_02 .'
-      # - 'docker build --rm -f Dockerfile_master -t support-background-manage-system .'
       - 'docker tag docker_test_02 registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
       - 'docker push registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     when: 
@@ -27,8 +23,8 @@ pipeline:
   rancher-online:
     image: peloton/drone-rancher
     url: 'https://rancher.11vx.cn'
-    access_key: admin
-    secret_key: admin
+    access_key: 7C3B0D6FFBAAF845DD3D
+    secret_key: CyVAH7yQbqPCTGMiFxN5oQEZVf53tAAR1LDRn6Bn
     service: my-test-01/test-01
     docker_image: 'registry.cn-beijing.aliyuncs.com/my_docker_test_01/docker_test_02'
     confirm: true
