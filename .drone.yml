@@ -35,6 +35,6 @@ pipeline:
     confirm: true
     timeout: 300
     when:
-      branch: master
+      branch: master 
 
   
