@@ -15,7 +15,7 @@ export default {
     getData() {
       axios({
         method: "get",
-        url: "/"
+        url: "http://api.11vx.cn"
       });
     }
   }
