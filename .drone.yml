@@ -6,7 +6,8 @@ pipeline:
   build-master:
     image: 'node:10.6.0'
     commands:
-      - 'echo hello'
+      - 'npm install'
+      - 'npm run build'
     when:
       branch: master
   public-online:      
