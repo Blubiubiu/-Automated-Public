@@ -16,7 +16,7 @@ export default {
       axios({
         method: "get",
         url: "https://api.11vx.cn/test",
-        ContentType: "application/x-www-form-urlencoded",
+        ContentType: "application/json",
         headers: {'X-Requested-With': 'XMLHttpRequest'}
       });
     }
