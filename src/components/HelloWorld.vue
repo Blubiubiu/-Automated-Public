@@ -20,13 +20,22 @@ export default {
       });
     },
     getUser() {
-        axios({
-            method: "post",
-            url: "https://api.11vx.cn/user",
-            data: {
-                id: 1
-            }
+      let config = {
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8"
+        }
+      };
+      let userInfo = {
+          id: 1
+      };
+      axios
+        .post("https://api.11vx.cn/user", JSON.stringify(userInfo), config)
+        .then(res => {
+          console.log(res);
         })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
