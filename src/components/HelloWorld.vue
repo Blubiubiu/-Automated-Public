@@ -15,7 +15,7 @@ export default {
     getData() {
       axios({
         method: "get",
-        url: "http://api.11vx.cn",
+        url: "https://api./test",
         headers: {'X-Requested-With': 'XMLHttpRequest'},
       });
     }
