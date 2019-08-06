@@ -22,7 +22,7 @@ export default {
     getUser() {
       let config = {
         headers: {
-          "Content-Type": "application/json;charset=UTF-8"
+          "Content-Type": "application/x-www-form-urlencoded"
         }
       };
       let userInfo = {
