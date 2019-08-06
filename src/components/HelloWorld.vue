@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <button @click="getData">请求数据</button>
+    <button @click="getUser">获取用户信息</button>
   </div>
 </template>
 
@@ -17,6 +18,15 @@ export default {
         method: "get",
         url: "https://api.11vx.cn/test"
       });
+    },
+    getUser() {
+        axios({
+            method: "post",
+            url: "https://api.11vx.cn/user",
+            data: {
+                id: 1
+            }
+        })
     }
   }
 };
