@@ -23,11 +23,16 @@ export default {
       let userInfo = {
         id: 1
       };
-      axios({
-        url: "/user",
-        method: "post",
-        data: userInfo
-      });
+
+      const getCourseAuditionList = (...rest) => {
+        return axios({
+          url: "/user",
+          method: "post",
+          ...rest
+        });
+      };
+
+      getCourseAuditionList(userInfo)
     }
   }
 };
