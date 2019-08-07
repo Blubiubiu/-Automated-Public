@@ -20,26 +20,22 @@ export default {
       });
     },
     getUser() {
-      axios({
-        method: "get",
-        url: "https://api.11vx.cn/user"
-      });
-      //   let config = {
-      //     headers: {
-      //       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      //     }
-      //   };
-      //   let userInfo = {
-      //       id: 1
-      //   };
-      //   axios
-      //     .post("https://api.11vx.cn/user",this.$qs.stringify(userInfo), config)
-      //     .then(res => {
-      //       console.log(res);
-      //     })
-      //     .catch(err => {
-      //       console.log(err);
-      //     });
+      let config = {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        }
+      };
+      let userInfo = {
+        id: 1
+      };
+      axios
+        .post("https://api.11vx.cn/user", this.$qs.stringify(userInfo), config)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
