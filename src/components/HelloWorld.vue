@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "@/http/request";
+
 export default {
   name: "HelloWorld",
   data() {
@@ -15,27 +16,18 @@ export default {
   methods: {
     getData() {
       axios({
-        method: "get",
-        url: "https://api.11vx.cn/test"
+        url: "/test"
       });
     },
     getUser() {
-      let config = {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-        }
-      };
       let userInfo = {
         id: 1
       };
-      axios
-        .post("https://api.11vx.cn/user", this.$qs.stringify(userInfo), config)
-        .then(res => {
-          console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      axios({
+        url: "/user",
+        method: "post",
+        data: userInfo
+      });
     }
   }
 };
