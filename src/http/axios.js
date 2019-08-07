@@ -11,7 +11,7 @@ class HttpRequest {
         const config = {
             baseURL: this.baseUrl,
             headers: {
-                
+                contentType: "application/json; charset=utf-8"
             }
         }
         return config
