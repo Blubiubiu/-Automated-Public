@@ -9,7 +9,10 @@ class HttpRequest {
     }
     getInsideConfig() {
         const config = {
-            baseURL: this.baseUrl
+            baseURL: this.baseUrl,
+            headers: {
+                contentType: "application/json; charset=utf-8"
+            }
         }
         return config
     }
