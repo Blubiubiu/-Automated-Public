@@ -6,5 +6,6 @@ if (process.env.NODE_ENV != 'development') {
 } else {
   url = url
 }
+
 const http = new HttpRequest(url)
 export default http
