@@ -7,12 +7,13 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://api.11vx.cn',
+        target: 'http://api.11vx.cn:7000',
         ws: true,
         changeOrigin: true,
         pathRewrite: { //需要rewrite重写的, 如果在服务器端做了处理则可以不要这段
           '^/api': '/'
         }
+        
       }
     },
     disableHostCheck: true 
