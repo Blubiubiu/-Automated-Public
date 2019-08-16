@@ -2,6 +2,7 @@
   <div class="hello">
     <button @click="getData">请求数据</button>
     <button @click="getUser">获取用户信息</button>
+    111
   </div>
 </template>
 
