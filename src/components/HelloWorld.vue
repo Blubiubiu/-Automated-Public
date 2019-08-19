@@ -16,7 +16,7 @@
 <script>
 
 import axios from "@/http/request";
-import Print from '../print'
+import Print from './print'
 Vue.use(Print) // 注册
 export default {
   name: "HelloWorld",
