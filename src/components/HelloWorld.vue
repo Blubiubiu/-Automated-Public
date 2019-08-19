@@ -17,7 +17,7 @@
 
 import axios from "@/http/request";
 import Print from './print' 
-Vue.use(Print) // 注册 
+Vue.use(Print) // 注册  
 export default {
   name: "HelloWorld",
   data() {
